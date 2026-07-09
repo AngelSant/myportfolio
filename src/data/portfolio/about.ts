@@ -1,50 +1,13 @@
-export const profile = {
-  shortName: "Angel Santana",
-  fullName: "Angel Moises Islas Santana",
-  degree: "Ingeniero en Software",
-  role: "Mobile App Developer | Full-Stack Developer",
-  email: "angel.santana7801@gmail.com",
-  whatsapp: "https://wa.me/5217714054687",
-  location: "México",
+    export const about = {
+        professionalProfile:
+        "Soy Ingeniero en Software egresado de la Universidad Politécnica de Pachuca, enfocado en el desarrollo de aplicaciones móviles y plataformas web. Me interesa construir soluciones digitales que sean funcionales, claras, mantenibles y orientadas a resolver necesidades reales de negocio.",
+        value:
+        "He participado en proyectos relacionados con logística, transporte de carga, CRM, gestión inmobiliaria, sistemas administrativos, gestión documental, plataformas SaaS y soluciones digitales a medida. Me he involucrado en análisis de requerimientos, diseño de interfaces, desarrollo de módulos, consumo de APIs, validaciones, mantenimiento, corrección de errores y mejoras UI/UX.",
+        objective:
+        "Busco seguir creciendo como Mobile App Developer y Full-Stack Developer, fortaleciendo mis conocimientos en arquitectura de software, backend, cloud, UX/UI, ciberseguridad, inteligencia artificial aplicada y buenas prácticas de desarrollo.",
+    };
 
-  summary:
-    "Ingeniero en Software enfocado en el desarrollo de aplicaciones móviles y plataformas web. Mi perfil combina experiencia en desarrollo móvil y full-stack, con interés constante por construir soluciones funcionales, mantenibles y orientadas a resolver necesidades reales de negocio.",
-
-  socials: {
-    github: "https://github.com/AngelSant",
-    linkedin: "https://www.linkedin.com/in/angel-santana-52b355272/",
-    instagram: "https://instagram.com/angel.santan4/",
-  },
-
-  quickLinks: [
-    {
-      label: "Sobre mí",
-      href: "/sobre-mi",
-      description: "Conoce mi perfil profesional, experiencia y formación.",
-    },
-    {
-      label: "Proyectos",
-      href: "/proyectos",
-      description:
-        "Explora algunos sistemas, apps y plataformas que he desarrollado.",
-    },
-    {
-      label: "Servicios",
-      href: "/servicios",
-      description: "Descubre cómo puedo ayudarte en proyectos digitales.",
-    },
-  ],
-  
-  about: {
-    professionalProfile:
-      "Soy Ingeniero en Software egresado de la Universidad Politécnica de Pachuca, enfocado en el desarrollo de aplicaciones móviles y plataformas web. Me interesa construir soluciones digitales que sean funcionales, claras, mantenibles y orientadas a resolver necesidades reales de negocio.",
-    value:
-      "He participado en proyectos relacionados con logística, transporte de carga, CRM, gestión inmobiliaria, sistemas administrativos, gestión documental, plataformas SaaS y soluciones digitales a medida. Me he involucrado en análisis de requerimientos, diseño de interfaces, desarrollo de módulos, consumo de APIs, validaciones, mantenimiento, corrección de errores y mejoras UI/UX.",
-    objective:
-      "Busco seguir creciendo como Mobile App Developer y Full-Stack Developer, fortaleciendo mis conocimientos en arquitectura de software, backend, cloud, UX/UI, ciberseguridad, inteligencia artificial aplicada y buenas prácticas de desarrollo.",
-  },
-
-  experience: [
+  export const experience = [
     {
       company: "CargaApp / Sector logístico",
       position: "Mobile App Developer & Full-Stack Developer",
@@ -95,17 +58,17 @@ export const profile = {
         "Diseño de interfaces y preparación para despliegue web.",
       ],
     },
-  ],
+  ];
 
-  education: [
+  export const education = [
     {
       institution: "Universidad Politécnica de Pachuca",
       degree: "Ingeniería en Software",
       status: "Egresado",
     },
-  ],
+  ];
 
-  aptitudes: [
+  export const aptitudes = [
     "Pensamiento analítico",
     "Aprendizaje continuo",
     "Adaptabilidad",
@@ -114,9 +77,9 @@ export const profile = {
     "Resolución de problemas",
     "Organización por prioridades",
     "Orientación a producto",
-  ],
+  ];
 
-  techSkills: [
+  export const techSkills = [
     {
       category: "Mobile",
       items: [
@@ -194,5 +157,4 @@ export const profile = {
         "Visual Studio Code",
       ],
     },
-  ],
-};
+  ];

@@ -1,14 +1,15 @@
-import { profile } from "@/data/profile";
+import { profile } from "@/data/portfolio";
+import styles from "./page.module.css";
 
 export default function SobreMiPage() {
   return (
-    <section className="aboutPage">
-      <div className="aboutHero">
-        <div className="aboutImage">
+    <section className={styles.aboutPage}>
+      <div className={styles.aboutHero}>
+        <div className={styles.aboutImage}>
           <span>Imagen personal / ilustración profesional</span>
         </div>
 
-        <div className="aboutIntro">
+        <div className={styles.aboutIntro}>
           <p className="eyebrow">Sobre mí</p>
           <h1>
             {profile.fullName.split(" ")[0]}{" "}
@@ -18,23 +19,25 @@ export default function SobreMiPage() {
           <h2>{profile.degree}</h2>
           <p className="role">{profile.role}</p>
 
-          <p>{profile.about.professionalProfile}</p>
-          <p>{profile.about.value}</p>
+          <p className={styles.aboutText}>
+            {profile.about.professionalProfile}
+          </p>
+          <p className={styles.aboutText}>{profile.about.value}</p>
         </div>
       </div>
 
-      <div className="aboutGrid">
-        <article className="aboutCard aboutCardLarge">
-          <p className="sectionLabel">Experiencia profesional</p>
+      <div className={styles.aboutGrid}>
+        <article className={`${styles.aboutCard} ${styles.aboutCardLarge}`}>
+          <p className={styles.sectionLabel}>Experiencia profesional</p>
           <h2>Experiencia construyendo soluciones reales</h2>
 
-          <div className="timeline">
+          <div className={styles.timeline}>
             {profile.experience.map((item) => (
-              <div className="timelineItem" key={item.company}>
-                <div className="timelineDot" />
+              <div className={styles.timelineItem} key={item.company}>
+                <div className={styles.timelineDot} />
 
                 <div>
-                  <p className="timelinePeriod">{item.period}</p>
+                  <p className={styles.timelinePeriod}>{item.period}</p>
                   <h3>{item.position}</h3>
                   <h4>{item.company}</h4>
                   <p>{item.description}</p>
@@ -50,20 +53,20 @@ export default function SobreMiPage() {
           </div>
         </article>
 
-        <aside className="aboutSide">
-          <article className="aboutCard">
-            <p className="sectionLabel">Educación</p>
+        <aside className={styles.aboutSide}>
+          <article className={styles.aboutCard}>
+            <p className={styles.sectionLabel}>Educación</p>
             {profile.education.map((item) => (
               <div key={item.institution}>
                 <h3>{item.degree}</h3>
                 <p>{item.institution}</p>
-                <span className="smallBadge">{item.status}</span>
+                <span className={styles.smallBadge}>{item.status}</span>
               </div>
             ))}
           </article>
 
-          <article className="aboutCard">
-            <p className="sectionLabel">Aptitudes</p>
+          <article className={styles.aboutCard}>
+            <p className={styles.sectionLabel}>Aptitudes</p>
             <div className="chipList">
               {profile.aptitudes.map((item) => (
                 <span className="chip" key={item}>
@@ -75,8 +78,8 @@ export default function SobreMiPage() {
         </aside>
       </div>
 
-      <section className="skillsSection">
-        <div className="pageHeader compact">
+      <section className={styles.skillsSection}>
+        <div className={styles.skillsHeader}>
           <p className="eyebrow">Stack técnico</p>
           <h2>Lenguajes, frameworks y herramientas</h2>
           <p>
@@ -85,9 +88,9 @@ export default function SobreMiPage() {
           </p>
         </div>
 
-        <div className="skillsGrid">
+        <div className={styles.skillsGrid}>
           {profile.techSkills.map((group) => (
-            <article className="skillCard" key={group.category}>
+            <article className={styles.skillCard} key={group.category}>
               <h3>{group.category}</h3>
 
               <div className="chipList">
@@ -102,10 +105,10 @@ export default function SobreMiPage() {
         </div>
       </section>
 
-      <section className="aboutObjective">
+      <section className={styles.aboutObjective}>
         <p className="eyebrow">Objetivo profesional</p>
         <h2>Crear productos útiles, escalables y bien diseñados</h2>
-        <p>{profile.about.objective}</p>
+        <p className={styles.objectiveText}>{profile.about.objective}</p>
       </section>
     </section>
   );

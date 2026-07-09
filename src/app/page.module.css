@@ -1,0 +1,159 @@
+.heroSection {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 140px 0 90px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 64px;
+    align-items: center;
+  }
+  
+  .heroContent h1 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+  
+  .heroContent h1 span {
+    color: #74747c;
+  }
+  
+  .heroContent h2 {
+    margin: 24px 0 10px;
+    font-size: clamp(24px, 3vw, 38px);
+    letter-spacing: -0.04em;
+  }
+  
+  .heroDescription {
+    max-width: 620px;
+    margin: 28px 0 0;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  
+  .heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 26px;
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+    transition: 0.2s ease;
+  }
+  
+  .primaryButton {
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #000000;
+  }
+  
+  .secondaryButton {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+  }
+  
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .heroVisual {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imagePlaceholder {
+    width: min(100%, 430px);
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    padding: 36px;
+    text-align: center;
+    color: var(--soft-muted);
+    border: 1px dashed #cfcfcf;
+    border-radius: var(--radius-lg);
+    background:
+      linear-gradient(135deg, rgba(0, 0, 0, 0.04), transparent),
+      #ffffff;
+    box-shadow: var(--shadow);
+  }
+  
+  .quickAccess {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+  }
+  
+  .quickCard {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+  }
+  
+  .quickCard:hover {
+    transform: translateY(-6px);
+    border-color: #000000;
+  }
+  
+  .quickCard h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+  }
+  
+  .quickCard p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 900px) {
+    .heroSection {
+      grid-template-columns: 1fr;
+      padding-top: 110px;
+    }
+  
+    .quickAccess {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .heroSection {
+      width: min(100% - 28px, 1120px);
+    }
+  
+    .heroContent h1 {
+      font-size: 52px;
+    }
+  
+    .heroDescription {
+      font-size: 16px;
+    }
+  
+    .heroActions {
+      flex-direction: column;
+    }
+  
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+    }
+  }

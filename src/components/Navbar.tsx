@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 const navItems = [
   { label: "Inicio", href: "/" },
@@ -11,10 +12,10 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <header className="navbarWrapper">
-      <nav className="navbar">
+    <header className={styles.navbarWrapper}>
+      <nav className={styles.navbar}>
         {navItems.map((item) => (
-          <Link key={item.href} href={item.href} className="navLink">
+          <Link key={item.href} href={item.href} className={styles.navLink}>
             {item.label}
           </Link>
         ))}

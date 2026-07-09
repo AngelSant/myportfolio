@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { profile } from "@/data/profile";
+import { profile } from "@/data/portfolio";
+import styles from "./Footer.module.css";
 
 export function Footer() {
   return (
-    <footer className="footer">
-      <div className="footerGrid">
+    <footer className={styles.footer}>
+      <div className={styles.footerGrid}>
         <div>
           <h2>{profile.shortName}</h2>
           <p>{profile.role}</p>
@@ -22,19 +23,19 @@ export function Footer() {
 
         <div>
           <h3>Sígueme</h3>
-          <a href={profile.socials.github} target="_blank">
+          <a href={profile.socials.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a href={profile.socials.linkedin} target="_blank">
+          <a href={profile.socials.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a href={profile.socials.instagram} target="_blank">
+          <a href={profile.socials.instagram} target="_blank" rel="noreferrer">
             Instagram
           </a>
         </div>
       </div>
 
-      <div className="footerBottom">
+      <div className={styles.footerBottom}>
         © {new Date().getFullYear()} {profile.shortName}. Todos los derechos
         reservados.
       </div>
