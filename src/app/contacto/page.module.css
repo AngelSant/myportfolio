@@ -1,0 +1,228 @@
+.contactPage {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 140px 0 100px;
+  }
+  
+  .contactHero {
+    max-width: 820px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  
+  .contactHero h1 {
+    margin: 0;
+    font-size: clamp(46px, 7vw, 86px);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+  }
+  
+  .contactHero p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  
+  .contactGrid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  
+  .mainContactCard,
+  .contactCard,
+  .availabilitySection {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+  }
+  
+  .mainContactCard {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 52px;
+    background:
+      radial-gradient(circle at top left, rgba(0, 0, 0, 0.08), transparent 34%),
+      #ffffff;
+  }
+  
+  .cardLabel {
+    width: fit-content;
+    margin-bottom: 22px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    background: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  
+  .mainContactCard h2 {
+    max-width: 620px;
+    margin: 0 0 20px;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+  
+  .mainContactCard p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  
+  .mainActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+    transition: 0.2s ease;
+  }
+  
+  .primaryButton {
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #000000;
+  }
+  
+  .secondaryButton {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+  }
+  
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .contactCards {
+    display: grid;
+    gap: 18px;
+  }
+  
+  .contactCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 92px;
+    padding: 24px;
+    transition: 0.2s ease;
+  }
+  
+  .contactCard:hover {
+    transform: translateY(-4px);
+    border-color: #000000;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+  }
+  
+  .contactCard span {
+    margin-bottom: 8px;
+    color: var(--soft-muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  
+  .contactCard strong {
+    color: #111111;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  .availabilitySection {
+    margin-top: 80px;
+    padding: 52px;
+    text-align: center;
+  }
+  
+  .availabilitySection h2 {
+    max-width: 760px;
+    margin: 0 auto 34px;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+  
+  .availabilityGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    text-align: left;
+  }
+  
+  .availabilityGrid div {
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: #fafafa;
+  }
+  
+  .availabilityGrid h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+  }
+  
+  .availabilityGrid p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 900px) {
+    .contactGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .mainContactCard {
+      min-height: auto;
+    }
+  
+    .availabilityGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .contactPage {
+      width: min(100% - 28px, 1120px);
+      padding-top: 110px;
+    }
+  
+    .mainContactCard,
+    .availabilitySection {
+      padding: 28px;
+    }
+  
+    .mainActions {
+      flex-direction: column;
+    }
+  
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+    }
+  
+    .contactCard strong {
+      font-size: 16px;
+    }
+  }
