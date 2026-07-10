@@ -34,14 +34,14 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background: var(--surface);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
     transition: 0.2s ease;
   }
   
   .certificationCard:hover {
     transform: translateY(-6px);
-    border-color: #000000;
-    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-border);
+    box-shadow: var(--shadow);
   }
   
   .certificateImage {
@@ -51,10 +51,18 @@
     padding: 32px;
     text-align: center;
     color: var(--soft-muted);
-    border-bottom: 1px dashed #d7d7d7;
+    border-bottom: 1px dashed var(--placeholder-border);
     background:
-      radial-gradient(circle at top left, rgba(0, 0, 0, 0.06), transparent 34%),
-      linear-gradient(135deg, #ffffff, #f4f4f5);
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--foreground) 6%, transparent),
+        transparent 34%
+      ),
+      linear-gradient(
+        135deg,
+        var(--placeholder-start),
+        var(--placeholder-end)
+      );
   }
   
   .certificateContent {
@@ -79,13 +87,13 @@
   }
   
   .certificateMeta span {
-    color: #ffffff;
-    background: #000000;
+    color: var(--primary-foreground);
+    background: var(--primary-background);
   }
   
   .certificateMeta strong {
-    color: #444444;
-    background: #f2f2f2;
+    color: var(--foreground);
+    background: var(--surface-muted);
   }
   
   .certificateContent h2 {
@@ -102,7 +110,7 @@
   }
   
   .issuer strong {
-    color: #111111;
+    color: var(--foreground);
   }
   
   .description {
@@ -128,9 +136,9 @@
   }
   
   .primaryButton {
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid #000000;
+    color: var(--primary-foreground);
+    background: var(--primary-background);
+    border: 1px solid var(--primary-background);
     transition: 0.2s ease;
   }
   
@@ -141,8 +149,8 @@
   
   .disabledButton {
     border: 1px solid var(--border);
-    background: #f7f7f7;
-    color: #8a8a8a;
+    background: var(--disabled-background);
+    color: var(--disabled-foreground);
   }
   
   .learningSection {
@@ -151,8 +159,12 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background:
-      radial-gradient(circle at top left, rgba(0, 0, 0, 0.08), transparent 32%),
-      #ffffff;
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--foreground) 8%, transparent),
+        transparent 32%
+      ),
+      var(--surface);
     box-shadow: var(--shadow);
     text-align: center;
   }
@@ -200,5 +212,17 @@
     .primaryButton,
     .disabledButton {
       width: 100%;
+    }
+
+    .certificationsPage {
+      padding-bottom: 76px;
+    }
+    
+    .pageHeader h1 {
+      font-size: clamp(42px, 13vw, 60px);
+    }
+    
+    .certificateImage {
+      min-height: 190px;
     }
   }

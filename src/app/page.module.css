@@ -16,7 +16,7 @@
   }
   
   .heroContent h1 span {
-    color: #74747c;
+    color: var(--soft-muted);
   }
   
   .heroContent h2 {
@@ -53,15 +53,15 @@
   }
   
   .primaryButton {
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid #000000;
+    color: var(--primary-foreground);
+    background: var(--primary-background);
+    border: 1px solid var(--primary-background);
   }
   
   .secondaryButton {
-    color: #000000;
-    background: #ffffff;
-    border: 1px solid #000000;
+    color: var(--secondary-foreground);
+    background: var(--secondary-background);
+    border: 1px solid var(--secondary-foreground);
   }
   
   .primaryButton:hover,
@@ -83,11 +83,15 @@
     padding: 36px;
     text-align: center;
     color: var(--soft-muted);
-    border: 1px dashed #cfcfcf;
+    border: 1px dashed var(--placeholder-border);
     border-radius: var(--radius-lg);
     background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.04), transparent),
-      #ffffff;
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--foreground) 4%, transparent),
+        transparent
+      ),
+      var(--surface);
     box-shadow: var(--shadow);
   }
   
@@ -110,7 +114,8 @@
   
   .quickCard:hover {
     transform: translateY(-6px);
-    border-color: #000000;
+    border-color: var(--hover-border);
+    box-shadow: var(--shadow);
   }
   
   .quickCard h3 {
@@ -132,6 +137,14 @@
   
     .quickAccess {
       grid-template-columns: 1fr;
+    }
+
+    .heroVisual {
+      order: -1;
+    }
+    
+    .imagePlaceholder {
+      width: min(100%, 520px);
     }
   }
   
@@ -155,5 +168,19 @@
     .primaryButton,
     .secondaryButton {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .heroContent h1 {
+      font-size: 44px;
+    }
+  
+    .heroContent h2 {
+      font-size: 24px;
+    }
+  
+    .quickCard {
+      padding: 22px;
     }
   }

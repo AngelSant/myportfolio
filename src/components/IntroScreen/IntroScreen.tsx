@@ -55,7 +55,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
             </div>
 
             <div className={styles.progressFooter}>
-              <span>Preparando experiencia</span>
+              <span>Preparando portafolio</span>
               <span>100%</span>
             </div>
           </div>

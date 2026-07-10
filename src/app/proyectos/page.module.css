@@ -33,14 +33,14 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background: var(--surface);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
     transition: 0.2s ease;
   }
   
   .projectCard:hover {
     transform: translateY(-6px);
-    border-color: #000000;
-    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-border);
+    box-shadow: var(--shadow);
   }
   
   .projectImage {
@@ -50,10 +50,18 @@
     padding: 32px;
     text-align: center;
     color: var(--soft-muted);
-    border-bottom: 1px dashed #d7d7d7;
+    border-bottom: 1px dashed var(--placeholder-border);
     background:
-      radial-gradient(circle at top left, rgba(0, 0, 0, 0.06), transparent 34%),
-      linear-gradient(135deg, #ffffff, #f4f4f5);
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--foreground) 6%, transparent),
+        transparent 34%
+      ),
+      linear-gradient(
+        135deg,
+        var(--placeholder-start),
+        var(--placeholder-end)
+      );
   }
   
   .projectContent {
@@ -79,13 +87,13 @@
   }
   
   .projectMeta span {
-    color: #444444;
-    background: #f2f2f2;
+    color: var(--foreground);
+    background: var(--surface-muted);
   }
   
   .projectMeta strong {
-    color: #ffffff;
-    background: #000000;
+    color: var(--primary-foreground);
+    background: var(--primary-background);
   }
   
   .projectContent h2 {
@@ -146,15 +154,15 @@
   }
   
   .primaryButton {
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid #000000;
+    color: var(--primary-foreground);
+    background: var(--primary-background);
+    border: 1px solid var(--primary-background);
   }
   
   .secondaryButton {
-    color: #000000;
-    background: #ffffff;
-    border: 1px solid #000000;
+    color: var(--secondary-foreground);
+    background: var(--secondary-background);
+    border: 1px solid var(--secondary-foreground);
   }
   
   .primaryButton:hover,
@@ -165,8 +173,8 @@
   
   .disabledButton {
     border: 1px solid var(--border);
-    background: #f7f7f7;
-    color: #8a8a8a;
+    background: var(--disabled-background);
+    color: var(--disabled-foreground);
   }
   
   @media (max-width: 900px) {
@@ -197,5 +205,17 @@
     .secondaryButton,
     .disabledButton {
       width: 100%;
+    }
+
+    .projectsPage {
+      padding-bottom: 76px;
+    }
+    
+    .pageHeader h1 {
+      font-size: clamp(42px, 13vw, 60px);
+    }
+    
+    .pageHeader p {
+      font-size: 16px;
     }
   }

@@ -10,6 +10,29 @@
   --soft-muted: #8a8a8a;
   --border: #e7e7e7;
 
+  --surface-elevated: #ffffff;
+  --surface-muted: #f2f2f3;
+  --surface-disabled: #f7f7f7;
+
+  --placeholder-start: #ffffff;
+  --placeholder-end: #f4f4f5;
+  --placeholder-border: #d7d7d7;
+
+  --primary-background: #000000;
+  --primary-foreground: #ffffff;
+  --secondary-background: #ffffff;
+  --secondary-foreground: #000000;
+
+  --disabled-background: #f7f7f7;
+  --disabled-foreground: #8a8a8a;
+
+  --hover-border: #000000;
+
+  --footer-background: #000000;
+  --footer-foreground: #ffffff;
+  --footer-muted: #a7a7a7;
+  --footer-soft-muted: #777777;
+
   --active-background: #000000;
   --active-foreground: #ffffff;
 
@@ -37,6 +60,29 @@
   --muted: #b2b2b7;
   --soft-muted: #85858d;
   --border: #2b2b2f;
+
+  --surface-elevated: #1b1b1e;
+  --surface-muted: #222225;
+  --surface-disabled: #202023;
+
+  --placeholder-start: #1a1a1d;
+  --placeholder-end: #121214;
+  --placeholder-border: #343439;
+
+  --primary-background: #f4f4f5;
+  --primary-foreground: #111113;
+  --secondary-background: transparent;
+  --secondary-foreground: #f4f4f5;
+
+  --disabled-background: #202023;
+  --disabled-foreground: #77777f;
+
+  --hover-border: #f4f4f5;
+
+  --footer-background: #070708;
+  --footer-foreground: #f4f4f5;
+  --footer-muted: #aaaaaf;
+  --footer-soft-muted: #77777e;
 
   --active-background: #f4f4f5;
   --active-foreground: #101011;
@@ -155,5 +201,33 @@ svg {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+  }
+}
+
+body,
+a,
+button,
+article,
+section,
+div,
+span {
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  a,
+  button,
+  article,
+  section,
+  div,
+  span {
+    transition-duration: 1ms;
   }
 }

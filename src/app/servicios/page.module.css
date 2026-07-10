@@ -37,14 +37,14 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background: var(--surface);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
     transition: 0.2s ease;
   }
   
   .serviceCard:hover {
     transform: translateY(-6px);
-    border-color: #000000;
-    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.1);
+    border-color: var(--hover-border);
+    box-shadow: var(--shadow);
   }
   
   .serviceHeader span {
@@ -52,8 +52,8 @@
     margin-bottom: 18px;
     padding: 8px 12px;
     border-radius: var(--radius-sm);
-    background: #000000;
-    color: #ffffff;
+    background: var(--primary-background);
+    color: var(--primary-foreground);
     font-size: 12px;
     font-weight: 800;
   }
@@ -96,8 +96,12 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background:
-      radial-gradient(circle at top left, rgba(0, 0, 0, 0.08), transparent 32%),
-      #ffffff;
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--foreground) 8%, transparent),
+        transparent 32%
+      ),
+      var(--surface);
     box-shadow: var(--shadow);
     text-align: center;
   }
@@ -125,10 +129,10 @@
     min-height: 52px;
     margin-top: 34px;
     padding: 0 26px;
-    border: 1px solid #000000;
+    border: 1px solid var(--primary-background);
     border-radius: var(--radius-sm);
-    background: #000000;
-    color: #ffffff;
+    background: var(--primary-background);
+    color: var(--primary-foreground);
     font-weight: 800;
     transition: 0.2s ease;
   }
@@ -157,5 +161,18 @@
   
     .ctaButton {
       width: 100%;
+    }
+
+    .servicesPage {
+      padding-bottom: 76px;
+    }
+    
+    .pageHeader h1 {
+      font-size: clamp(42px, 13vw, 60px);
+    }
+    
+    .pageHeader p,
+    .ctaSection p:not(.eyebrow) {
+      font-size: 16px;
     }
   }

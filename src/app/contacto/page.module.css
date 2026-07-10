@@ -1,228 +1,323 @@
 .contactPage {
-    width: min(1120px, calc(100% - 40px));
-    margin: 0 auto;
-    padding: 140px 0 100px;
-  }
-  
-  .contactHero {
-    max-width: 820px;
-    margin: 0 auto 56px;
-    text-align: center;
-  }
-  
-  .contactHero h1 {
-    margin: 0;
-    font-size: clamp(46px, 7vw, 86px);
-    line-height: 0.95;
-    letter-spacing: -0.07em;
-  }
-  
-  .contactHero p:not(.eyebrow) {
-    color: var(--muted);
-    font-size: 18px;
-    line-height: 1.8;
-  }
-  
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 140px 0 100px;
+}
+
+.contactHero {
+  max-width: 820px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.contactHero h1 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(46px, 7vw, 86px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.contactHero p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.mainContactCard,
+.contactCard,
+.availabilitySection {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+}
+
+.mainContactCard {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px;
+  background:
+    radial-gradient(
+      circle at top left,
+      color-mix(in srgb, var(--foreground) 8%, transparent),
+      transparent 34%
+    ),
+    var(--surface);
+}
+
+.cardLabel {
+  width: fit-content;
+  margin-bottom: 22px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--primary-foreground);
+  background: var(--primary-background);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mainContactCard h2 {
+  max-width: 620px;
+  margin: 0 0 20px;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.mainContactCard p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.mainActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.primaryButton {
+  color: var(--primary-foreground);
+  background: var(--primary-background);
+  border: 1px solid var(--primary-background);
+}
+
+.secondaryButton {
+  color: var(--secondary-foreground);
+  background: var(--secondary-background);
+  border: 1px solid var(--secondary-foreground);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.contactCard:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.contactCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contactCard {
+  position: relative;
+  min-width: 0;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px;
+  text-align: center;
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--hover-border);
+  box-shadow: var(--shadow);
+}
+
+.iconBox,
+.availabilityIcon {
+  display: grid;
+  place-items: center;
+  color: var(--primary-foreground);
+  background: var(--primary-background);
+}
+
+.iconBox {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+}
+
+.iconBox svg {
+  width: 23px;
+  height: 23px;
+}
+
+.contactLabel {
+  margin-bottom: 7px;
+  color: var(--soft-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contactCard strong {
+  max-width: 100%;
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.externalIcon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 16px;
+  height: 16px;
+  color: var(--soft-muted);
+}
+
+.availabilitySection {
+  margin-top: 80px;
+  padding: 52px;
+  text-align: center;
+}
+
+.availabilitySection h2 {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.availabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+.availabilityGrid article {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+
+.availabilityIcon {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.availabilityIcon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.availabilityGrid h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.availabilityGrid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
   .contactGrid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 28px;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
-  
-  .mainContactCard,
-  .contactCard,
-  .availabilitySection {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--surface);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
-  }
-  
+
   .mainContactCard {
-    min-height: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 52px;
-    background:
-      radial-gradient(circle at top left, rgba(0, 0, 0, 0.08), transparent 34%),
-      #ffffff;
+    min-height: auto;
   }
-  
-  .cardLabel {
-    width: fit-content;
-    margin-bottom: 22px;
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
-    background: #000000;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 800;
+
+  .contactCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  
-  .mainContactCard h2 {
-    max-width: 620px;
-    margin: 0 0 20px;
-    font-size: clamp(34px, 5vw, 62px);
-    line-height: 1;
-    letter-spacing: -0.06em;
+}
+
+@media (max-width: 760px) {
+  .contactCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
+
+  .availabilityGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactPage {
+    width: min(100% - 28px, 1120px);
+    padding: 110px 0 76px;
+  }
+
+  .contactHero {
+    margin-bottom: 38px;
+  }
+
+  .contactHero h1 {
+    font-size: clamp(42px, 14vw, 62px);
+  }
+
+  .contactHero p:not(.eyebrow),
   .mainContactCard p {
-    max-width: 620px;
-    margin: 0;
-    color: var(--muted);
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 16px;
   }
-  
+
+  .mainContactCard,
+  .availabilitySection {
+    padding: 28px;
+  }
+
   .mainActions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 36px;
+    flex-direction: column;
   }
-  
+
   .primaryButton,
   .secondaryButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 52px;
-    padding: 0 24px;
-    border-radius: var(--radius-sm);
-    font-weight: 800;
-    transition: 0.2s ease;
+    width: 100%;
   }
-  
-  .primaryButton {
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid #000000;
-  }
-  
-  .secondaryButton {
-    color: #000000;
-    background: #ffffff;
-    border: 1px solid #000000;
-  }
-  
-  .primaryButton:hover,
-  .secondaryButton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  }
-  
+}
+
+@media (max-width: 480px) {
   .contactCards {
-    display: grid;
-    gap: 18px;
+    grid-template-columns: 1fr;
   }
-  
+
   .contactCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 92px;
-    padding: 24px;
-    transition: 0.2s ease;
+    min-height: 150px;
   }
-  
-  .contactCard:hover {
-    transform: translateY(-4px);
-    border-color: #000000;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
-  }
-  
-  .contactCard span {
-    margin-bottom: 8px;
-    color: var(--soft-muted);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  
-  .contactCard strong {
-    color: #111111;
-    font-size: 18px;
-    line-height: 1.4;
-  }
-  
-  .availabilitySection {
-    margin-top: 80px;
-    padding: 52px;
-    text-align: center;
-  }
-  
-  .availabilitySection h2 {
-    max-width: 760px;
-    margin: 0 auto 34px;
-    font-size: clamp(34px, 5vw, 62px);
-    line-height: 1;
-    letter-spacing: -0.06em;
-  }
-  
-  .availabilityGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    text-align: left;
-  }
-  
-  .availabilityGrid div {
-    padding: 26px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: #fafafa;
-  }
-  
-  .availabilityGrid h3 {
-    margin: 0 0 12px;
-    font-size: 22px;
-  }
-  
-  .availabilityGrid p {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  
-  @media (max-width: 900px) {
-    .contactGrid {
-      grid-template-columns: 1fr;
-    }
-  
-    .mainContactCard {
-      min-height: auto;
-    }
-  
-    .availabilityGrid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .contactPage {
-      width: min(100% - 28px, 1120px);
-      padding-top: 110px;
-    }
-  
-    .mainContactCard,
-    .availabilitySection {
-      padding: 28px;
-    }
-  
-    .mainActions {
-      flex-direction: column;
-    }
-  
-    .primaryButton,
-    .secondaryButton {
-      width: 100%;
-    }
-  
-    .contactCard strong {
-      font-size: 16px;
-    }
-  }
+}
