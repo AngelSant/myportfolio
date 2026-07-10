@@ -1,14 +1,53 @@
 :root {
+  color-scheme: light;
+
   --background: #f7f7f8;
+  --background-start: #ffffff;
   --surface: #ffffff;
+  --surface-soft: #fafafa;
   --foreground: #111111;
   --muted: #666666;
   --soft-muted: #8a8a8a;
   --border: #e7e7e7;
+
+  --active-background: #000000;
+  --active-foreground: #ffffff;
+
+  --navbar-background: rgba(255, 255, 255, 0.88);
+  --navbar-border: rgba(17, 17, 17, 0.08);
+
+  --focus-ring: rgba(17, 17, 17, 0.22);
+
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 18px 45px rgba(0, 0, 0, 0.05);
+
   --radius-lg: 32px;
   --radius-md: 22px;
   --radius-sm: 999px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #0c0c0d;
+  --background-start: #111113;
+  --surface: #171719;
+  --surface-soft: #1d1d20;
+  --foreground: #f4f4f5;
+  --muted: #b2b2b7;
+  --soft-muted: #85858d;
+  --border: #2b2b2f;
+
+  --active-background: #f4f4f5;
+  --active-foreground: #101011;
+
+  --navbar-background: rgba(20, 20, 22, 0.88);
+  --navbar-border: rgba(255, 255, 255, 0.09);
+
+  --focus-ring: rgba(255, 255, 255, 0.28);
+
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --card-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
 }
 
 * {
@@ -17,15 +56,40 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
+  min-width: 320px;
   margin: 0;
   color: var(--foreground);
   background:
-    radial-gradient(circle at top left, rgba(0, 0, 0, 0.04), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, var(--background) 100%);
+    radial-gradient(
+      circle at top left,
+      color-mix(in srgb, var(--foreground) 4%, transparent),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      var(--background-start) 0%,
+      var(--background) 100%
+    );
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    color 250ms ease,
+    background-color 250ms ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -35,6 +99,16 @@ a {
 
 main {
   min-height: 100vh;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+::selection {
+  color: var(--active-foreground);
+  background: var(--active-background);
 }
 
 /* Shared utilities */
@@ -50,7 +124,7 @@ main {
 
 .role {
   margin: 0;
-  color: #222222;
+  color: var(--foreground);
   font-size: 20px;
   font-weight: 800;
 }
@@ -66,8 +140,20 @@ main {
   padding: 9px 13px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: #fafafa;
-  color: #444444;
+  background: var(--surface-soft);
+  color: var(--foreground);
   font-size: 13px;
   font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,138 @@
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: #ffffff;
+    background: #050505;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 600ms ease,
+      visibility 600ms ease;
+  }
+  
+  .leaving {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .backgroundGrid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: min(25vw, 320px) min(25vw, 320px);
+    mask-image: radial-gradient(circle at center, #000 10%, transparent 75%);
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    width: min(560px, calc(100% - 40px));
+  }
+  
+  .loadingContent {
+    animation: contentIn 500ms ease both;
+  }
+  
+  .loadingLabel {
+    margin: 0 0 18px;
+    color: #b0b0b0;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .progressTrack {
+    height: 5px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+  
+  .progressBar {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: progress 2400ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  
+  .progressFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    color: #777777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .welcome {
+    margin: 0;
+    font-size: clamp(58px, 11vw, 132px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+    text-align: center;
+    animation: welcomeIn 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  
+  @keyframes progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  @keyframes contentIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes welcomeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+      filter: blur(10px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .progressFooter {
+      font-size: 9px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .intro,
+    .loadingContent,
+    .progressBar,
+    .welcome {
+      animation-duration: 1ms;
+      transition-duration: 1ms;
+    }
+  }

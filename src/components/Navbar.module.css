@@ -9,39 +9,129 @@
 }
 
 .navbar {
+  max-width: min(100%, 1120px);
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--navbar-border);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--navbar-background);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
   pointer-events: auto;
+  transition:
+    background 250ms ease,
+    border-color 250ms ease;
+}
+
+.linksWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .navLink {
-  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
   border-radius: var(--radius-sm);
   color: var(--muted);
   font-size: 14px;
   font-weight: 700;
-  transition: 0.2s ease;
+  white-space: nowrap;
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    transform 200ms ease;
 }
 
 .navLink:hover {
-  color: #ffffff;
-  background: #000000;
+  color: var(--active-foreground);
+  background: var(--active-background);
+  transform: translateY(-1px);
 }
 
-@media (max-width: 900px) {
+.navLink:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.navLink.active {
+  color: var(--active-foreground);
+  background: var(--active-background);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.navIcon {
+  flex: 0 0 auto;
+}
+
+.separator {
+  width: 1px;
+  height: 26px;
+  margin: 0 2px;
+  background: var(--border);
+}
+
+@media (max-width: 1000px) {
+  .navbarWrapper {
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0 14px;
+  }
+
   .navbar {
+    width: 100%;
     max-width: 100%;
+  }
+
+  .linksWrapper {
+    flex: 1;
     overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .linksWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .separator {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbarWrapper {
+    top: 12px;
+  }
+
+  .navbar {
+    padding: 7px;
   }
 
   .navLink {
-    white-space: nowrap;
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+
+  .navIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 440px) {
+  .navLink span {
+    display: none;
+  }
+
+  .navLink {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
   }
 }
